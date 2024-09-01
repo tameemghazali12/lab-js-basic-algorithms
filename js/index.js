@@ -77,3 +77,35 @@ if(isPalindrome(phraseToCheck)){
 }else{
     console.log("This pharase is not palindrom");
 }
+
+
+//using if-else and for
+
+let phraseToCheck1 = "A man, a plan, a canal, Panama!";
+    function isPalindrome1(str){
+         // Remove non-alphanumeric characters and convert to lowercase
+         let cleanedStr1="";
+
+         for(let i=0;i<str.length;i++){
+            let char=str[i];
+            if(char.match(/[a-zA-Z0-9]/)){
+                cleanedStr1+=char.toLowerCase();
+            }
+         }
+
+             // Reverse the cleaned string
+             let reversedStr1="";
+             for(let i=cleanedStr1.length-1;i>=0;i--){
+                reversedStr1=cleanedStr1[i];
+             }
+
+        // Check if cleaned string is the same as reversed string
+        return cleanedStr1 === reversedStr1;
+        
+    }
+
+    if (isPalindrome(phraseToCheck)) {
+        console.log("This phrase is a palindrome.");
+    } else {
+        console.log("This phrase is not a palindrome.");
+    }
