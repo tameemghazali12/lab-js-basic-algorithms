@@ -247,16 +247,48 @@ for(let i=0;i<affordableItem.length;i++){
 }
 
 
-//Problem 13: Counting Word Frequency
-//You have a paragraph of text. Write a function to count how many times each word appears in the text.
+//First, let's list all the properties of the object to see what we are dealing with. So, create a for in loop that will console.log the key and values of each property
+
+// Delete the previousOwner property.
+
+// Update the doesItWork property to be true.
+
+// Create a conditional that will check if the price of the product is higher than 100. In case it is, add a new property discountPercentage with a value of 10.
+
+// Using the price and discountPercentage properties (and a little bit of math 😉 ) update the price property to be the discounted one! Price minus 10%
+
+// Finally, create a conditional that, using the in operator, will check of the discountPercentage property exists in the object and, if so, create a console.log() that uses the three property values to look something like this: "We got some headphones on sale for just $108, that's 10% off!"
 
 
-let paragraph = "The quick brown fox jumps over the lazy dog. The dog barked at the fox.";
+// Initial code
+let product = {
+  name: 'headphones',
+  price: 120,
+  doesItWork: false,
+  previousOwner: "Bob"
+  };
 
-let words = paragraph.toLowerCase().replace(/[^\w\s]/g, "").split(" ");
-console.log(words)
+  //list of all properties
+  for(let key in product){
+    console.log(`${key}: ${product[key]}`)
+  }
 
-let freq=words[0]
-for(let i=0;i<words.length;i++){
-  if(words[i])
-}
+  // 4. Deleting a property
+  delete product.previousOwner
+
+  //updating a property
+  product.doesItWork=true;
+
+  //create property through conditional
+
+  if(product.price>100){
+    product.discountPercentage=10;
+  }
+   // 7. Using property values to update other properties
+   product.price-=product.price*(product.discountPercentage/100);
+
+   // 8. Checking if a property exists with a conditional
+
+   if('discountPercentage' in product){
+    console.log(`We got some ${product.name} on sale for just $${product.price}, that's ${product.discountPercentage}% off`);
+   }
