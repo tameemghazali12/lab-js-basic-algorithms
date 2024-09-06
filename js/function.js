@@ -94,3 +94,36 @@ const cube=function(x){
 };
 const number=[0,1,3,5,6];
 console.log(map(cube,number))
+
+
+//In JavaScript, a function can be defined based on a condition. For example, the following function definition defines myFunc only if num equals 0:
+
+// let myFun;
+// if(num==0){
+//     myFun=function(theObject){
+//         theObject.make="Tata"
+//     };
+// }
+
+
+const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+
+function findLongestWord(wordArray) {
+  if(wordArray.length===0){
+    return null;
+  }
+  //Initialize the first word in longest
+  let longestWord=wordArray[0];
+
+  for(let i=1;i<wordArray.length;i++){
+    // If the current word is longer than the longestWord, update longestWord
+
+    if(wordArray[i].length>longestWord.length){
+      longestWord=wordArray[i];
+    }
+  }
+  return longestWord;
+
+}
+// Example usage: Finding the longest word in the words array
+console.log(`The longest word is: ${findLongestWord(words)}`);
